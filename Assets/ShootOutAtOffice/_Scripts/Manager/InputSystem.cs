@@ -69,7 +69,10 @@ public class InputSystem : MonoBehaviour
         {
             movement = new Vector2(floatingJoystick.Horizontal, floatingJoystick.Vertical);
 
-            OnButtonPressed?.Invoke(movement);
+            if (isInputEnabled)
+            {
+                OnButtonPressed?.Invoke(movement);
+            }
         }
     }
 }
